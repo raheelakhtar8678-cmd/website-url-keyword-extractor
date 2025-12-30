@@ -20,15 +20,26 @@ const SEOMetrics = require('./utils/seoMetrics');
 async function main() {
     await Actor.init();
 
+    Actor.log.info('='.repeat(60));
+    Actor.log.info('KEYWORD EXTRACTOR PRO - STARTING');
+    Actor.log.info('='.repeat(60));
+
     try {
         // Get input
+        Actor.log.info('Fetching input...');
         const input = await Actor.getInput();
 
-        if (!input || !input.url) {
-            throw new Error('Input URL is required');
+        Actor.log.info('Input received:', input ? 'Yes' : 'No');
+
+        if (!input) {
+            throw new Error('No input received. Please provide input configuration.');
         }
 
-        Actor.log.info('Starting Keyword Extractor Pro...', { input });
+        if (!input.url) {
+            throw new Error('Input URL is required. Please provide a URL in the input.');
+        }
+
+        Actor.log.info('Starting Keyword Extractor Pro...', { url: input.url });
 
         // Validate URL
         let url;
@@ -178,10 +189,15 @@ async function main() {
         });
 
     } catch (error) {
-        Actor.log.error('Actor failed with error:', error);
-        throw error;
-    } finally {
-        await Actor.exit();
+        Actor.log.error('='.repeat(60));
+        Actor.log.error('ACTOR FAILED WITH ERROR');
+        Actor.log.error('='.repeat(60));
+        Actor.log.error('Error message:', error.message);
+        Actor.log.error('Error stack:', error.stack);
+        Actor.log.error('Error details:', JSON.stringify(error, null, 2));
+
+        // Make sure the error is thrown so Apify marks the run as failed
+        await Actor.fail(error.message);
     }
 }
 
