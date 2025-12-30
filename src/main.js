@@ -10,7 +10,7 @@
  * - Beautiful HTML reports
  */
 
-const { Actor } = require('apify');
+const { Actor, log } = require('apify');
 const Scraper = require('./scraper');
 const ArticleAnalyzer = require('./analyzers/articleAnalyzer');
 const EcommerceAnalyzer = require('./analyzers/ecommerceAnalyzer');
@@ -20,16 +20,16 @@ const SEOMetrics = require('./utils/seoMetrics');
 async function main() {
     await Actor.init();
 
-    Actor.log.info('='.repeat(60));
-    Actor.log.info('KEYWORD EXTRACTOR PRO - STARTING');
-    Actor.log.info('='.repeat(60));
+    log.info('='.repeat(60));
+    log.info('KEYWORD EXTRACTOR PRO - STARTING');
+    log.info('='.repeat(60));
 
     try {
         // Get input
-        Actor.log.info('Fetching input...');
+        log.info('Fetching input...');
         const input = await Actor.getInput();
 
-        Actor.log.info('Input received:', input ? 'Yes' : 'No');
+        log.info('Input received:', input ? 'Yes' : 'No');
 
         if (!input) {
             throw new Error('No input received. Please provide input configuration.');
@@ -39,7 +39,7 @@ async function main() {
             throw new Error('Input URL is required. Please provide a URL in the input.');
         }
 
-        Actor.log.info('Starting Keyword Extractor Pro...', { url: input.url });
+        log.info('Starting Keyword Extractor Pro...', { url: input.url });
 
         // Validate URL
         let url;
@@ -69,21 +69,21 @@ async function main() {
         await scraper.navigateTo(input.url, advancedOptions.waitForSelector);
         const content = await scraper.extractContent();
 
-        Actor.log.info('Page content extracted successfully');
+        log.info('Page content extracted successfully');
 
         // Detect content type if auto mode
         let detectedType = extractionMode;
         if (extractionMode === 'auto') {
             detectedType = detectContentType(content);
-            Actor.log.info(`Auto-detected content type: ${detectedType}`);
+            log.info(`Auto-detected content type: ${detectedType}`);
         }
 
         // Extract search suggestions for e-commerce
         let searchSuggestions = [];
         if ((detectedType === 'ecommerce' || detectedType === 'general') && includeSearchSuggestions) {
-            Actor.log.info('Attempting to extract search suggestions...');
+            log.info('Attempting to extract search suggestions...');
             searchSuggestions = await scraper.extractSearchSuggestions();
-            Actor.log.info(`Found ${searchSuggestions.length} search suggestions`);
+            log.info(`Found ${searchSuggestions.length} search suggestions`);
         }
 
         // Take screenshot for report
@@ -108,16 +108,16 @@ async function main() {
         };
 
         if (detectedType === 'article') {
-            Actor.log.info('Using Article Analyzer...');
+            log.info('Using Article Analyzer...');
             const analyzer = new ArticleAnalyzer(analyzerOptions);
             keywordResults = await analyzer.analyze(content);
         } else if (detectedType === 'ecommerce') {
-            Actor.log.info('Using E-commerce Analyzer...');
+            log.info('Using E-commerce Analyzer...');
             const analyzer = new EcommerceAnalyzer(analyzerOptions);
             keywordResults = await analyzer.analyze(content, searchSuggestions);
         } else {
             // General mode - use article analyzer as fallback
-            Actor.log.info('Using General Analyzer (Article-based)...');
+            log.info('Using General Analyzer (Article-based)...');
             const analyzer = new ArticleAnalyzer(analyzerOptions);
             keywordResults = await analyzer.analyze(content);
         }
@@ -176,25 +176,25 @@ async function main() {
             reportUrl = await reportGenerator.generateReport(outputData);
             outputData.reportUrl = reportUrl;
 
-            Actor.log.info(`Report generated and available at: ${reportUrl}`);
+            log.info(`Report generated and available at: ${reportUrl}`);
         }
 
         // Save to dataset
         await Actor.pushData(outputData);
 
-        Actor.log.info('Keyword extraction completed successfully!', {
+        log.info('Keyword extraction completed successfully!', {
             totalKeywords: seoMetrics.totalKeywords,
             contentType: detectedType,
             reportUrl
         });
 
     } catch (error) {
-        Actor.log.error('='.repeat(60));
-        Actor.log.error('ACTOR FAILED WITH ERROR');
-        Actor.log.error('='.repeat(60));
-        Actor.log.error('Error message:', error.message);
-        Actor.log.error('Error stack:', error.stack);
-        Actor.log.error('Error details:', JSON.stringify(error, null, 2));
+        log.error('='.repeat(60));
+        log.error('ACTOR FAILED WITH ERROR');
+        log.error('='.repeat(60));
+        log.error('Error message:', error.message);
+        log.error('Error stack:', error.stack);
+        log.error('Error details:', JSON.stringify(error, null, 2));
 
         // Make sure the error is thrown so Apify marks the run as failed
         await Actor.fail(error.message);

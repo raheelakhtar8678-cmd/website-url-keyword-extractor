@@ -6,7 +6,7 @@ const TextProcessor = require('../utils/textProcessor');
 const SEOMetrics = require('../utils/seoMetrics');
 const SimpleRAKE = require('../utils/simpleRAKE');
 const natural = require('natural');
-const { Actor } = require('apify');
+const { Actor, log } = require('apify');
 
 class ArticleAnalyzer {
     constructor(options = {}) {
@@ -20,7 +20,7 @@ class ArticleAnalyzer {
      * Analyze article content and extract keywords
      */
     async analyze(content) {
-        Actor.log.info('Starting article keyword analysis...');
+        log.info('Starting article keyword analysis...');
 
         // Combine all relevant text
         const fullText = this.combineText(content);
@@ -47,7 +47,7 @@ class ArticleAnalyzer {
         // Categorize keywords
         const categorized = this.categorizeKeywords(mergedKeywords, fullText, sentences);
 
-        Actor.log.info(`Extracted ${categorized.all.length} total keywords`);
+        log.info(`Extracted ${categorized.all.length} total keywords`);
 
         return categorized;
     }
@@ -86,7 +86,7 @@ class ArticleAnalyzer {
                 method: 'rake'
             }));
         } catch (error) {
-            Actor.log.warning(`RAKE extraction failed: ${error.message}`);
+            log.warning(`RAKE extraction failed: ${error.message}`);
             return [];
         }
     }
@@ -115,7 +115,7 @@ class ArticleAnalyzer {
                 .sort((a, b) => b.score - a.score)
                 .slice(0, this.maxKeywords);
         } catch (error) {
-            Actor.log.warning(`TF-IDF extraction failed: ${error.message}`);
+            log.warning(`TF-IDF extraction failed: ${error.message}`);
             return [];
         }
     }
@@ -198,7 +198,7 @@ class ArticleAnalyzer {
 
             return keywords;
         } catch (error) {
-            Actor.log.warning(`Entity extraction failed: ${error.message}`);
+            log.warning(`Entity extraction failed: ${error.message}`);
             return [];
         }
     }

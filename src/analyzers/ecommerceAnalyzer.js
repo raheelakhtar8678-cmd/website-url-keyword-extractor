@@ -5,7 +5,7 @@
 
 const TextProcessor = require('../utils/textProcessor');
 const SEOMetrics = require('../utils/seoMetrics');
-const { Actor } = require('apify');
+const { Actor, log } = require('apify');
 
 class EcommerceAnalyzer {
     constructor(options = {}) {
@@ -18,7 +18,7 @@ class EcommerceAnalyzer {
      * Analyze e-commerce site and extract keywords
      */
     async analyze(content, searchSuggestions = []) {
-        Actor.log.info('Starting e-commerce keyword analysis...');
+        log.info('Starting e-commerce keyword analysis...');
 
         const results = {
             searchSuggestions: this.processSearchSuggestions(searchSuggestions),
@@ -34,7 +34,7 @@ class EcommerceAnalyzer {
         // Categorize for e-commerce
         const categorized = this.categorizeKeywords(mergedKeywords, content);
 
-        Actor.log.info(`Extracted ${categorized.all.length} total keywords`);
+        log.info(`Extracted ${categorized.all.length} total keywords`);
 
         return categorized;
     }

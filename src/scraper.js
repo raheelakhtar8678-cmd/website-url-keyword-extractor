@@ -3,7 +3,7 @@
  */
 
 const { chromium } = require('playwright');
-const { Actor } = require('apify');
+const { Actor, log } = require('apify');
 
 class Scraper {
     constructor(options = {}) {
@@ -85,7 +85,7 @@ class Scraper {
 
         this.page = await context.newPage();
 
-        Actor.log.info('Browser initialized with stealth settings');
+        log.info('Browser initialized with stealth settings');
     }
 
     /**
@@ -96,7 +96,7 @@ class Scraper {
             await this.initialize();
         }
 
-        Actor.log.info(`Navigating to: ${url}`);
+        log.info(`Navigating to: ${url}`);
 
         try {
             // Navigate with timeout
@@ -116,11 +116,11 @@ class Scraper {
             // Additional wait for dynamic content
             await this.page.waitForTimeout(2000);
 
-            Actor.log.info('Page loaded successfully');
+            log.info('Page loaded successfully');
 
             return true;
         } catch (error) {
-            Actor.log.error(`Failed to navigate to ${url}: ${error.message}`);
+            log.error(`Failed to navigate to ${url}: ${error.message}`);
             throw error;
         }
     }
@@ -210,7 +210,7 @@ class Scraper {
             const searchInput = await this.page.$('input[type="search"], input[name*="search"], input[placeholder*="search" i]');
 
             if (!searchInput) {
-                Actor.log.warning('No search input found on page');
+                log.warning('No search input found on page');
                 return [];
             }
 
@@ -261,7 +261,7 @@ class Scraper {
             return [...new Set(suggestions)];
 
         } catch (error) {
-            Actor.log.warning(`Failed to extract search suggestions: ${error.message}`);
+            log.warning(`Failed to extract search suggestions: ${error.message}`);
             return [];
         }
     }
@@ -280,7 +280,7 @@ class Scraper {
 
             return screenshot;
         } catch (error) {
-            Actor.log.warning(`Failed to take screenshot: ${error.message}`);
+            log.warning(`Failed to take screenshot: ${error.message}`);
             return null;
         }
     }
@@ -293,7 +293,7 @@ class Scraper {
             await this.browser.close();
             this.browser = null;
             this.page = null;
-            Actor.log.info('Browser closed');
+            log.info('Browser closed');
         }
     }
 }

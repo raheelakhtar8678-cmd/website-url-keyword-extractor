@@ -2,7 +2,7 @@
  * HTML Report Generator
  */
 
-const { Actor } = require('apify');
+const { Actor, log } = require('apify');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -13,7 +13,7 @@ class ReportGenerator {
      * Generate comprehensive HTML report
      */
     async generateReport(data) {
-        Actor.log.info('Generating HTML report...');
+        log.info('Generating HTML report...');
 
         const html = this.buildHTML(data);
 
@@ -26,7 +26,7 @@ class ReportGenerator {
         // Generate public URL
         const reportUrl = `https://api.apify.com/v2/key-value-stores/${storeId}/records/report.html`;
 
-        Actor.log.info(`Report generated: ${reportUrl}`);
+        log.info(`Report generated: ${reportUrl}`);
 
         return reportUrl;
     }
