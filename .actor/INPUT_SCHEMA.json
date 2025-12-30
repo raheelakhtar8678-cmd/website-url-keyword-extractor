@@ -1,0 +1,131 @@
+{
+    "title": "Keyword Extractor Pro - Input Configuration",
+    "description": "Configure your keyword extraction job. Supports articles, ecommerce sites, and more with advanced Cloudflare bypass.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "url": {
+            "title": "🌐 Website URL",
+            "type": "string",
+            "description": "The URL you want to analyze for keywords. Works with any website including Cloudflare-protected sites.",
+            "editor": "textfield",
+            "example": "https://www.example.com/article-or-product-page",
+            "pattern": "^https?://.*",
+            "nullable": false
+        },
+        "extractionMode": {
+            "title": "🎯 Extraction Mode",
+            "type": "string",
+            "description": "Choose the extraction strategy. Auto-detect works for most cases.",
+            "enum": [
+                "auto",
+                "article",
+                "ecommerce",
+                "general"
+            ],
+            "enumTitles": [
+                "🤖 Auto-Detect (Recommended)",
+                "📰 Article/Blog Mode",
+                "🛒 E-commerce Mode",
+                "🌍 General Web Page"
+            ],
+            "default": "auto",
+            "editor": "select"
+        },
+        "maxKeywords": {
+            "title": "📊 Maximum Keywords",
+            "type": "integer",
+            "description": "Maximum number of keywords to extract per category. Higher values = more comprehensive but slower.",
+            "default": 50,
+            "minimum": 10,
+            "maximum": 200,
+            "editor": "number"
+        },
+        "analysisDepth": {
+            "title": "🔍 Analysis Depth",
+            "type": "string",
+            "description": "How deep should the analysis go? Deep analysis takes longer but provides more insights.",
+            "enum": [
+                "quick",
+                "standard",
+                "deep"
+            ],
+            "enumTitles": [
+                "⚡ Quick (Fast)",
+                "⭐ Standard (Balanced)",
+                "🔬 Deep (Comprehensive)"
+            ],
+            "default": "standard",
+            "editor": "select"
+        },
+        "includeSearchSuggestions": {
+            "title": "🔎 Extract Search Suggestions",
+            "type": "boolean",
+            "description": "For ecommerce sites: Attempt to capture search autocomplete suggestions and related searches.",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "generateReport": {
+            "title": "📄 Generate HTML Report",
+            "type": "boolean",
+            "description": "Create a beautiful, visual HTML report with charts and tables. Highly recommended!",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "advancedOptions": {
+            "title": "⚙️ Advanced Options",
+            "type": "object",
+            "description": "Advanced configuration for power users",
+            "editor": "json",
+            "properties": {
+                "useProxy": {
+                    "title": "Use Proxy",
+                    "type": "boolean",
+                    "description": "Use Apify proxy for better Cloudflare bypass",
+                    "default": true
+                },
+                "waitForSelector": {
+                    "title": "Wait for Selector",
+                    "type": "string",
+                    "description": "CSS selector to wait for before extracting (optional)",
+                    "editor": "textfield"
+                },
+                "minKeywordLength": {
+                    "title": "Minimum Keyword Length",
+                    "type": "integer",
+                    "description": "Minimum character length for keywords (default: 3)",
+                    "default": 3,
+                    "minimum": 1,
+                    "maximum": 10
+                },
+                "excludeStopwords": {
+                    "title": "Exclude Common Stopwords",
+                    "type": "boolean",
+                    "description": "Remove common words like 'the', 'and', 'or', etc.",
+                    "default": true
+                },
+                "language": {
+                    "title": "Content Language",
+                    "type": "string",
+                    "description": "Specify language for better stopword removal (auto-detect if empty)",
+                    "editor": "textfield",
+                    "example": "en"
+                },
+                "customStopwords": {
+                    "title": "Custom Stopwords",
+                    "type": "array",
+                    "description": "Add your own words to exclude (comma-separated)",
+                    "editor": "stringList"
+                }
+            },
+            "default": {
+                "useProxy": true,
+                "minKeywordLength": 3,
+                "excludeStopwords": true
+            }
+        }
+    },
+    "required": [
+        "url"
+    ]
+}

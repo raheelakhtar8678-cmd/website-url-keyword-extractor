@@ -1,0 +1,34 @@
+{
+  "name": "keyword-extractor-actor",
+  "version": "1.0.0",
+  "description": "Advanced keyword extractor that analyzes any URL (articles, ecommerce) with Cloudflare bypass and generates comprehensive keyword reports",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "apify",
+    "keyword-extraction",
+    "seo",
+    "nlp",
+    "scraping",
+    "cloudflare-bypass"
+  ],
+  "author": "Your Name",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apify": "^3.1.0",
+    "playwright": "^1.40.0",
+    "natural": "^6.10.0",
+    "compromise": "^14.10.0",
+    "stopword": "^2.0.8",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

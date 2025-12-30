@@ -1,0 +1,14 @@
+{
+    "url": "https://www.amazon.com/s?k=laptop",
+    "extractionMode": "ecommerce",
+    "maxKeywords": 50,
+    "analysisDepth": "standard",
+    "includeSearchSuggestions": true,
+    "generateReport": true,
+    "advancedOptions": {
+        "useProxy": true,
+        "minKeywordLength": 2,
+        "excludeStopwords": true,
+        "language": "en"
+    }
+}

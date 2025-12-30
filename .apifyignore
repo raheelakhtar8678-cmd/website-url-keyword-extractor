@@ -1,0 +1,32 @@
+# Apify files
+apify_storage/
+storage/
+.apify/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Testing
+test-results.json
+test-report.html
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/

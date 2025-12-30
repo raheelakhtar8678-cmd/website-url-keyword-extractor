@@ -1,0 +1,14 @@
+{
+    "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+    "extractionMode": "article",
+    "maxKeywords": 30,
+    "analysisDepth": "standard",
+    "includeSearchSuggestions": false,
+    "generateReport": true,
+    "advancedOptions": {
+        "useProxy": false,
+        "minKeywordLength": 3,
+        "excludeStopwords": true,
+        "language": "en"
+    }
+}
