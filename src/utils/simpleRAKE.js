@@ -56,7 +56,8 @@ class SimpleRAKE {
         let currentPhrase = [];
 
         // Get stopword list
-        const stopwords = stopword[this.language] || stopword.en;
+        // Get stopword list with fallback
+        const stopwords = stopword[this.language] || stopword.en || [];
 
         tokens.forEach(token => {
             if (stopwords.includes(token) || token.length < this.minWordLength) {
