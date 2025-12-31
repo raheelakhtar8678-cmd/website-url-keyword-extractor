@@ -3,7 +3,7 @@
     "name": "keyword-extractor-pro",
     "title": "Keyword Extractor Pro - Advanced SEO Analysis",
     "description": "Extract keywords from any URL with Cloudflare bypass. Supports articles, ecommerce sites, blogs. Generates comprehensive SEO reports with competition analysis, LSI keywords, long-tail keywords, and search suggestions.",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "meta": {
         "templateId": "node-playwright"
     },

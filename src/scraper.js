@@ -164,179 +164,179 @@ class Scraper {
             log.warning('Content verification timed out. Page might be empty, blocked, or still loading.');
         }
     }
-}
+
 
     /**
      * Extract page content
      */
     async extractContent() {
-    const content = await this.page.evaluate(() => {
-        // Helper to check if element is visible
-        const isVisible = (elem) => {
-            if (!elem) return false;
-            const style = window.getComputedStyle(elem);
-            return style.display !== 'none' &&
-                style.visibility !== 'hidden' &&
-                style.opacity !== '0';
-        };
+        const content = await this.page.evaluate(() => {
+            // Helper to check if element is visible
+            const isVisible = (elem) => {
+                if (!elem) return false;
+                const style = window.getComputedStyle(elem);
+                return style.display !== 'none' &&
+                    style.visibility !== 'hidden' &&
+                    style.opacity !== '0';
+            };
 
-        // Extract text from visible elements only
-        const getVisibleText = (selector) => {
-            const elements = document.querySelectorAll(selector);
-            return Array.from(elements)
-                .filter(el => isVisible(el))
-                .map(el => el.textContent)
-                .join(' ');
-        };
+            // Extract text from visible elements only
+            const getVisibleText = (selector) => {
+                const elements = document.querySelectorAll(selector);
+                return Array.from(elements)
+                    .filter(el => isVisible(el))
+                    .map(el => el.textContent)
+                    .join(' ');
+            };
 
-        return {
-            // Meta information
-            title: document.title || '',
-            metaDescription: document.querySelector('meta[name="description"]')?.content || '',
-            metaKeywords: document.querySelector('meta[name="keywords"]')?.content || '',
+            return {
+                // Meta information
+                title: document.title || '',
+                metaDescription: document.querySelector('meta[name="description"]')?.content || '',
+                metaKeywords: document.querySelector('meta[name="keywords"]')?.content || '',
 
-            // Content sections
-            headings: {
-                h1: Array.from(document.querySelectorAll('h1')).map(h => h.textContent.trim()),
-                h2: Array.from(document.querySelectorAll('h2')).map(h => h.textContent.trim()),
-                h3: Array.from(document.querySelectorAll('h3')).map(h => h.textContent.trim())
-            },
+                // Content sections
+                headings: {
+                    h1: Array.from(document.querySelectorAll('h1')).map(h => h.textContent.trim()),
+                    h2: Array.from(document.querySelectorAll('h2')).map(h => h.textContent.trim()),
+                    h3: Array.from(document.querySelectorAll('h3')).map(h => h.textContent.trim())
+                },
 
-            // Main content
-            bodyText: document.body ? (document.body.innerText || '') : '',
-            articleContent: getVisibleText('article, [role="main"], main, .content, .post-content, .entry-content'),
+                // Main content
+                bodyText: document.body ? (document.body.innerText || '') : '',
+                articleContent: getVisibleText('article, [role="main"], main, .content, .post-content, .entry-content'),
 
-            // Links
-            links: Array.from(document.querySelectorAll('a')).map(a => ({
-                text: a.textContent ? a.textContent.trim() : '',
-                href: a.href || ''
-            })),
+                // Links
+                links: Array.from(document.querySelectorAll('a')).map(a => ({
+                    text: a.textContent ? a.textContent.trim() : '',
+                    href: a.href || ''
+                })),
 
-            // Images
-            images: Array.from(document.querySelectorAll('img')).map(img => ({
-                alt: img.alt,
-                src: img.src
-            })),
+                // Images
+                images: Array.from(document.querySelectorAll('img')).map(img => ({
+                    alt: img.alt,
+                    src: img.src
+                })),
 
-            // Schema.org data
-            schemaData: Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-                .map(script => {
-                    try {
-                        return JSON.parse(script.textContent);
-                    } catch (e) {
-                        return null;
-                    }
-                })
-                .filter(data => data !== null),
+                // Schema.org data
+                schemaData: Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+                    .map(script => {
+                        try {
+                            return JSON.parse(script.textContent);
+                        } catch (e) {
+                            return null;
+                        }
+                    })
+                    .filter(data => data !== null),
 
-            // Page type detection
-            hasSearchBox: !!document.querySelector('input[type="search"], input[name*="search"], input[placeholder*="search" i]'),
-            hasProductInfo: !!document.querySelector('[itemprop="price"], .price, [class*="price"]'),
-            hasArticleStructure: !!document.querySelector('article, [itemtype*="Article"]'),
+                // Page type detection
+                hasSearchBox: !!document.querySelector('input[type="search"], input[name*="search"], input[placeholder*="search" i]'),
+                hasProductInfo: !!document.querySelector('[itemprop="price"], .price, [class*="price"]'),
+                hasArticleStructure: !!document.querySelector('article, [itemtype*="Article"]'),
 
-            // URL
-            url: window.location.href
-        };
-    });
+                // URL
+                url: window.location.href
+            };
+        });
 
-    return content;
-}
+        return content;
+    }
 
     /**
      * Extract search suggestions (for ecommerce sites)
      */
     async extractSearchSuggestions(searchTerm = '') {
-    try {
-        // Find search input
-        const searchInput = await this.page.$('input[type="search"], input[name*="search"], input[placeholder*="search" i]');
+        try {
+            // Find search input
+            const searchInput = await this.page.$('input[type="search"], input[name*="search"], input[placeholder*="search" i]');
 
-        if (!searchInput) {
-            log.warning('No search input found on page');
+            if (!searchInput) {
+                log.warning('No search input found on page');
+                return [];
+            }
+
+            const suggestions = [];
+
+            // Try different common search terms to extract suggestions
+            const testTerms = searchTerm ? [searchTerm] : ['a', 'b', 'c', 'the', 'best'];
+
+            for (const term of testTerms) {
+                try {
+                    // Clear and type
+                    await searchInput.fill('');
+                    await searchInput.type(term, { delay: 100 });
+
+                    // Wait for suggestions to appear
+                    await this.page.waitForTimeout(1000);
+
+                    // Extract suggestions (common selectors)
+                    const termSuggestions = await this.page.evaluate(() => {
+                        const suggestionSelectors = [
+                            '[role="listbox"] li',
+                            '.autocomplete-suggestion',
+                            '.search-suggestion',
+                            '[class*="suggestion"]',
+                            '[class*="autocomplete"] li',
+                            '.ui-menu-item'
+                        ];
+
+                        for (const selector of suggestionSelectors) {
+                            const elements = document.querySelectorAll(selector);
+                            if (elements.length > 0) {
+                                return Array.from(elements)
+                                    .map(el => el.textContent.trim())
+                                    .filter(text => text.length > 0);
+                            }
+                        }
+
+                        return [];
+                    });
+
+                    suggestions.push(...termSuggestions);
+                } catch (err) {
+                    // Continue with next term
+                }
+            }
+
+            // Remove duplicates
+            return [...new Set(suggestions)];
+
+        } catch (error) {
+            log.warning(`Failed to extract search suggestions: ${error.message}`);
             return [];
         }
-
-        const suggestions = [];
-
-        // Try different common search terms to extract suggestions
-        const testTerms = searchTerm ? [searchTerm] : ['a', 'b', 'c', 'the', 'best'];
-
-        for (const term of testTerms) {
-            try {
-                // Clear and type
-                await searchInput.fill('');
-                await searchInput.type(term, { delay: 100 });
-
-                // Wait for suggestions to appear
-                await this.page.waitForTimeout(1000);
-
-                // Extract suggestions (common selectors)
-                const termSuggestions = await this.page.evaluate(() => {
-                    const suggestionSelectors = [
-                        '[role="listbox"] li',
-                        '.autocomplete-suggestion',
-                        '.search-suggestion',
-                        '[class*="suggestion"]',
-                        '[class*="autocomplete"] li',
-                        '.ui-menu-item'
-                    ];
-
-                    for (const selector of suggestionSelectors) {
-                        const elements = document.querySelectorAll(selector);
-                        if (elements.length > 0) {
-                            return Array.from(elements)
-                                .map(el => el.textContent.trim())
-                                .filter(text => text.length > 0);
-                        }
-                    }
-
-                    return [];
-                });
-
-                suggestions.push(...termSuggestions);
-            } catch (err) {
-                // Continue with next term
-            }
-        }
-
-        // Remove duplicates
-        return [...new Set(suggestions)];
-
-    } catch (error) {
-        log.warning(`Failed to extract search suggestions: ${error.message}`);
-        return [];
     }
-}
 
     /**
      * Take screenshot
      */
     async takeScreenshot() {
-    if (!this.page) return null;
+        if (!this.page) return null;
 
-    try {
-        const screenshot = await this.page.screenshot({
-            fullPage: false,
-            type: 'png'
-        });
+        try {
+            const screenshot = await this.page.screenshot({
+                fullPage: false,
+                type: 'png'
+            });
 
-        return screenshot;
-    } catch (error) {
-        log.warning(`Failed to take screenshot: ${error.message}`);
-        return null;
+            return screenshot;
+        } catch (error) {
+            log.warning(`Failed to take screenshot: ${error.message}`);
+            return null;
+        }
     }
-}
 
     /**
      * Close browser
      */
     async close() {
-    if (this.browser) {
-        await this.browser.close();
-        this.browser = null;
-        this.page = null;
-        log.info('Browser closed');
+        if (this.browser) {
+            await this.browser.close();
+            this.browser = null;
+            this.page = null;
+            log.info('Browser closed');
+        }
     }
-}
 }
 
 module.exports = Scraper;
