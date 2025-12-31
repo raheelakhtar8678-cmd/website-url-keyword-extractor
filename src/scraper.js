@@ -99,29 +99,54 @@ class Scraper {
         log.info(`Navigating to: ${url}`);
 
         try {
-            // Navigate with timeout
+            // First attempt: Standard navigation
+            // using domcontentloaded is faster and more reliable than networkidle
             await this.page.goto(url, {
-                waitUntil: 'networkidle',
+                waitUntil: 'domcontentloaded',
                 timeout: 60000
             });
 
             // Wait for specific selector if provided
-            if (waitForSelector) {
-                await this.page.waitForSelector(waitForSelector, { timeout: 60000 });
-            } else {
-                // Wait for body to be loaded
-                await this.page.waitForSelector('body', { timeout: 60000 });
+            try {
+                if (waitForSelector) {
+                    await this.page.waitForSelector(waitForSelector, { timeout: 30000 });
+                } else {
+                    // Try waiting for multiple common load indicators
+                    await Promise.race([
+                        this.page.waitForSelector('body', { timeout: 30000 }),
+                        this.page.waitForSelector('h1', { timeout: 30000 }),
+                        this.page.waitForSelector('main', { timeout: 30000 }),
+                        this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => { })
+                    ]);
+                }
+            } catch (waitError) {
+                log.warning(`Selector wait timed out, but continuing as page might be loaded: ${waitError.message}`);
             }
 
             // Additional wait for dynamic content
-            await this.page.waitForTimeout(2000);
+            await this.page.waitForTimeout(3000);
 
             log.info('Page loaded successfully');
-
             return true;
+
         } catch (error) {
-            log.error(`Failed to navigate to ${url}: ${error.message}`);
-            throw error;
+            log.warning(`Primary navigation failed: ${error.message}. Retrying with relaxed settings...`);
+
+            try {
+                // Retry with minimal wait requirements
+                await this.page.goto(url, {
+                    waitUntil: 'commit',
+                    timeout: 60000
+                });
+
+                await this.page.waitForTimeout(5000); // Fixed wait
+
+                log.info('Secondary navigation successful');
+                return true;
+            } catch (retryError) {
+                log.error(`Failed to navigate to ${url}: ${retryError.message}`);
+                throw retryError;
+            }
         }
     }
 
