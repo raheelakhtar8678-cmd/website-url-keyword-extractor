@@ -6,6 +6,7 @@ Extract comprehensive keyword insights from any URL with advanced analysis inclu
 
 - **🌐 Universal URL Support**: Works with articles, e-commerce sites, blogs, and general web pages
 - **🛡️ Cloudflare Bypass**: Advanced stealth techniques to bypass Cloudflare and other protections
+- **🔄 Hybrid Scraping Strategy**: Smart fallback mechanism that switches to HTTP scraping (got-scraping) if browser automation is blocked
 - **🎯 Dual Extraction Modes**:
   - **Article Mode**: TF-IDF, RAKE, entity extraction, heading analysis
   - **E-commerce Mode**: Search suggestions, product keywords, category analysis
@@ -164,6 +165,7 @@ The generated HTML report includes:
 - User-Agent rotation
 - Navigator property mocking
 - Playwright stealth mode
+- **Smart Fallback**: Automatic switch to header-mimicking HTTP requests (got-scraping) for stubborn sites
 - Apify proxy integration
 - Cookie and session handling
 
