@@ -107,10 +107,10 @@ class Scraper {
 
             // Wait for specific selector if provided
             if (waitForSelector) {
-                await this.page.waitForSelector(waitForSelector, { timeout: 10000 });
+                await this.page.waitForSelector(waitForSelector, { timeout: 60000 });
             } else {
                 // Wait for body to be loaded
-                await this.page.waitForSelector('body', { timeout: 10000 });
+                await this.page.waitForSelector('body', { timeout: 60000 });
             }
 
             // Additional wait for dynamic content
