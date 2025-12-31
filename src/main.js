@@ -176,7 +176,9 @@ async function main() {
             reportUrl = await reportGenerator.generateReport(outputData);
             outputData.reportUrl = reportUrl;
 
-            log.info(`Report generated and available at: ${reportUrl}`);
+            log.info('='.repeat(60));
+            log.info(`📄 REPORT GENERATED: ${reportUrl}`);
+            log.info('='.repeat(60));
         }
 
         // Save to dataset
