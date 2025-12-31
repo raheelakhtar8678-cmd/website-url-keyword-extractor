@@ -55,6 +55,7 @@ async function main() {
             maxKeywords = 50,
             analysisDepth = 'standard',
             includeSearchSuggestions = true,
+            searchFocusKeyword = '',
             generateReport = true,
             advancedOptions = {}
         } = input;
@@ -82,7 +83,7 @@ async function main() {
         let searchSuggestions = [];
         if ((detectedType === 'ecommerce' || detectedType === 'general') && includeSearchSuggestions) {
             log.info('Attempting to extract search suggestions...');
-            searchSuggestions = await scraper.extractSearchSuggestions();
+            searchSuggestions = await scraper.extractSearchSuggestions(searchFocusKeyword);
             log.info(`Found ${searchSuggestions.length} search suggestions`);
         }
 

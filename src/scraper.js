@@ -322,6 +322,7 @@ class Scraper {
             const suggestions = [];
 
             // Try different common search terms to extract suggestions
+            // If custom keyword is provided, use ONLY that. Otherwise use generic terms.
             const testTerms = searchTerm ? [searchTerm] : ['a', 'b', 'c', 'the', 'best'];
 
             for (const term of testTerms) {
