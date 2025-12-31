@@ -11,7 +11,8 @@ RUN npm --quiet set progress=false \
     && echo "Node.js version:" \
     && node --version \
     && echo "NPM version:" \
-    && npm --version
+    && npm --version \
+    && npx playwright install
 
 # Copy source code
 COPY . ./
