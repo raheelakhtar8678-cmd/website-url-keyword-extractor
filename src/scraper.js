@@ -311,8 +311,8 @@ class Scraper {
      */
     async extractSearchSuggestions(searchTerm = '') {
         try {
-            // Find search input
-            const searchInput = await this.page.$('input[type="search"], input[name*="search"], input[placeholder*="search" i]');
+            // Find search input - Expanded selectors for better compatibility (including 'q' for Google/general sites)
+            const searchInput = await this.page.$('input[type="search"], input[name*="search"], input[placeholder*="search" i], input[name="q"], textarea[name="q"]');
 
             if (!searchInput) {
                 log.warning('No search input found on page');
@@ -332,17 +332,21 @@ class Scraper {
                     await searchInput.type(term, { delay: 100 });
 
                     // Wait for suggestions to appear
-                    await this.page.waitForTimeout(1000);
+                    await this.page.waitForTimeout(2000); // Increased wait time slightly
 
                     // Extract suggestions (common selectors)
                     const termSuggestions = await this.page.evaluate(() => {
                         const suggestionSelectors = [
                             '[role="listbox"] li',
+                            '[role="listbox"] div[role="option"]', // ARIA standard
+                            'ul[role="listbox"] > li',
                             '.autocomplete-suggestion',
                             '.search-suggestion',
                             '[class*="suggestion"]',
                             '[class*="autocomplete"] li',
-                            '.ui-menu-item'
+                            '.ui-menu-item',
+                            '.s-suggestion', // Amazon
+                            'li.sbct' // Common on some search engines
                         ];
 
                         for (const selector of suggestionSelectors) {
