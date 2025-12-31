@@ -97,6 +97,7 @@ class Scraper {
         }
 
         log.info(`Navigating to: ${url}`);
+        this.currentUrl = url;
 
         try {
             // First attempt: Standard navigation
@@ -239,7 +240,70 @@ class Scraper {
             };
         });
 
-        return content;
+        if (content && content.bodyText && content.bodyText.length > 200) {
+            return content;
+        }
+
+        log.warning('Playwright extracted insufficient content. Attempting fallback scrape with got-scraping...');
+        return await this.fallbackScrape(this.currentUrl || this.page.url());
+    }
+
+    /**
+     * Fallback scraping using got-scraping (bypasses some JS blocks)
+     */
+    async fallbackScrape(url) {
+        try {
+            const { gotScraping } = require('got-scraping');
+            const cheerio = require('cheerio');
+
+            const response = await gotScraping({
+                url,
+                headerGeneratorOptions: {
+                    browsers: [{ name: 'chrome', minVersion: 110 }],
+                    devices: ['desktop'],
+                    locales: ['en-US', 'en'],
+                    operatingSystems: ['windows'],
+                }
+            });
+
+            const $ = cheerio.load(response.body);
+            const bodyText = $('body').text().trim();
+
+            // Extract using cheerio
+            const getVisibleText = (selector) => {
+                return $(selector).text().replace(/\s+/g, ' ').trim();
+            };
+
+            return {
+                title: $('title').text() || '',
+                metaDescription: $('meta[name="description"]').attr('content') || '',
+                metaKeywords: $('meta[name="keywords"]').attr('content') || '',
+                headings: {
+                    h1: $('h1').map((i, el) => $(el).text().trim()).get(),
+                    h2: $('h2').map((i, el) => $(el).text().trim()).get(),
+                    h3: $('h3').map((i, el) => $(el).text().trim()).get()
+                },
+                bodyText: bodyText,
+                articleContent: getVisibleText('article, [role="main"], main, .content, .post-content, .entry-content'),
+                links: $('a').map((i, el) => ({
+                    text: $(el).text().trim(),
+                    href: $(el).attr('href')
+                })).get(),
+                images: $('img').map((i, el) => ({
+                    alt: $(el).attr('alt') || '',
+                    src: $(el).attr('src') || ''
+                })).get(),
+                schemaData: [], // Hard to parse JSON-LD with regex reliably, skipping for fallback
+                hasSearchBox: $('input[type="search"]').length > 0,
+                hasProductInfo: $('[itemprop="price"]').length > 0,
+                hasArticleStructure: $('article').length > 0,
+                url: url
+            };
+
+        } catch (error) {
+            log.error(`Fallback scraping failed: ${error.message}`);
+            throw new Error('Insufficient content for analysis (both Playwright and Fallback failed)');
+        }
     }
 
     /**

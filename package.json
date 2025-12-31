@@ -1,6 +1,6 @@
 {
   "name": "keyword-extractor-actor",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Advanced keyword extractor that analyzes any URL (articles, ecommerce) with Cloudflare bypass and generates comprehensive keyword reports",
   "main": "src/main.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "compromise": "^14.10.0",
     "stopword": "^2.0.8",
     "cheerio": "^1.0.0-rc.12",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "got-scraping": "^3.2.15"
   },
   "devDependencies": {},
   "repository": {
