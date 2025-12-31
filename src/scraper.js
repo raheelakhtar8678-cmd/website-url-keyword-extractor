@@ -187,13 +187,13 @@ class Scraper {
                 },
 
                 // Main content
-                bodyText: document.body.innerText || '',
+                bodyText: document.body ? (document.body.innerText || '') : '',
                 articleContent: getVisibleText('article, [role="main"], main, .content, .post-content, .entry-content'),
 
                 // Links
                 links: Array.from(document.querySelectorAll('a')).map(a => ({
-                    text: a.textContent.trim(),
-                    href: a.href
+                    text: a.textContent ? a.textContent.trim() : '',
+                    href: a.href || ''
                 })),
 
                 // Images

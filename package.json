@@ -1,6 +1,6 @@
 {
   "name": "keyword-extractor-actor",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Advanced keyword extractor that analyzes any URL (articles, ecommerce) with Cloudflare bypass and generates comprehensive keyword reports",
   "main": "src/main.js",
   "scripts": {
