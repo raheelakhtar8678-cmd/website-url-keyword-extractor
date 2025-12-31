@@ -65,6 +65,12 @@
             "default": true,
             "editor": "checkbox"
         },
+        "searchFocusKeyword": {
+            "title": "Search Focus Keyword",
+            "type": "string",
+            "description": "Optional: Specific keyword to type into the search bar to get targeted suggestions (e.g., 'iphone', 'shoes'). If left empty, generic terms will be used.",
+            "editor": "textfield"
+        },
         "generateReport": {
             "title": "📄 Generate HTML Report",
             "type": "boolean",
