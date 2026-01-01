@@ -10,6 +10,7 @@
             "description": "The URL you want to analyze for keywords. Works with any website including Cloudflare-protected sites.",
             "editor": "textfield",
             "example": "https://www.example.com/article-or-product-page",
+            "prefill": "https://backlinko.com/on-page-seo",
             "pattern": "^https?://.*",
             "nullable": false
         },
@@ -69,7 +70,8 @@
             "title": "Search Focus Keyword",
             "type": "string",
             "description": "Optional: Specific keyword to type into the search bar to get targeted suggestions (e.g., 'iphone', 'shoes'). If left empty, generic terms will be used.",
-            "editor": "textfield"
+            "editor": "textfield",
+            "prefill": "seo"
         },
         "generateReport": {
             "title": "📄 Generate HTML Report",

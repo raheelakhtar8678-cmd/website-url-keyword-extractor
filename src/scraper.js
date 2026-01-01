@@ -312,10 +312,25 @@ class Scraper {
     async extractSearchSuggestions(searchTerm = '') {
         try {
             // Find search input - Expanded selectors for better compatibility (including 'q' for Google/general sites)
-            const searchInput = await this.page.$('input[type="search"], input[name*="search"], input[placeholder*="search" i], input[name="q"], textarea[name="q"]');
+            const searchSelectors = [
+                'input[type="search"]',
+                'input[name*="search"]',
+                'input[placeholder*="search" i]',
+                'input[name="q"]',
+                'textarea[name="q"]',
+                'input[id*="search"]',
+                '.search-input',
+                '[role="search"] input'
+            ];
+
+            const searchInputSelector = searchSelectors.join(', ');
+            const searchInput = await this.page.$(searchInputSelector);
 
             if (!searchInput) {
-                log.warning('No search input found on page');
+                log.warning('No search input found on page. Checked selectors: ' + searchSelectors.join(', '));
+                // Try to log the HTML to see what's wrong (first 500 chars)
+                // const html = await this.page.content();
+                // log.warning(`Page HTML start: ${html.substring(0, 500)}...`);
                 return [];
             }
 
@@ -324,6 +339,12 @@ class Scraper {
             // Try different common search terms to extract suggestions
             // If custom keyword is provided, use ONLY that. Otherwise use generic terms.
             const testTerms = searchTerm ? [searchTerm] : ['a', 'b', 'c', 'the', 'best'];
+
+            if (searchTerm) {
+                log.info(`Using custom search focus keyword: "${searchTerm}"`);
+            } else {
+                log.info('No custom focus keyword provided. Using generic test terms.');
+            }
 
             for (const term of testTerms) {
                 try {

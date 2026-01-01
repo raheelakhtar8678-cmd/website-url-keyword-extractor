@@ -29,7 +29,7 @@ async function main() {
         log.info('Fetching input...');
         const input = await Actor.getInput();
 
-        log.info('Input received:', input ? 'Yes' : 'No');
+        log.info(`Input received: ${input ? 'Yes' : 'No'}`);
 
         if (!input) {
             throw new Error('No input received. Please provide input configuration.');
@@ -190,6 +190,9 @@ async function main() {
             contentType: detectedType,
             reportUrl
         });
+
+        // Exit successfully
+        await Actor.exit();
 
     } catch (error) {
         log.error('='.repeat(60));
