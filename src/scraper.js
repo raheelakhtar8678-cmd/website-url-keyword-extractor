@@ -191,6 +191,7 @@ class Scraper {
             };
 
             return {
+                extractionMethod: 'playwright',
                 // Meta information
                 title: document.title || '',
                 metaDescription: document.querySelector('meta[name="description"]')?.content || '',
@@ -275,6 +276,7 @@ class Scraper {
             };
 
             return {
+                extractionMethod: 'fallback',
                 title: $('title').text() || '',
                 metaDescription: $('meta[name="description"]').attr('content') || '',
                 metaKeywords: $('meta[name="keywords"]').attr('content') || '',

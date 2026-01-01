@@ -87,10 +87,14 @@ async function main() {
             log.info(`Found ${searchSuggestions.length} search suggestions`);
         }
 
-        // Take screenshot for report
-        const screenshot = await scraper.takeScreenshot();
-        if (screenshot) {
-            await Actor.setValue('screenshot.png', screenshot, { contentType: 'image/png' });
+        // Take screenshot for report (only if we have a valid browser session)
+        if (content.extractionMethod !== 'fallback') {
+            const screenshot = await scraper.takeScreenshot();
+            if (screenshot) {
+                await Actor.setValue('screenshot.png', screenshot, { contentType: 'image/png' });
+            }
+        } else {
+            log.info('Skipping screenshot because fallback scraping was used (browser context likely lost/timed out)');
         }
 
         // Close browser
