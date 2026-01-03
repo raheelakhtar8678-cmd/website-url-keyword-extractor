@@ -2,7 +2,8 @@
  * HTML Report Generator
  */
 
-const { Actor, log } = require('apify');
+const { Actor } = require('apify');
+const log = Actor.log;
 const fs = require('fs').promises;
 const path = require('path');
 

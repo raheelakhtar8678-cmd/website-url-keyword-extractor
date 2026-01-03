@@ -10,7 +10,8 @@
  * - Beautiful HTML reports
  */
 
-const { Actor, log } = require('apify');
+const { Actor } = require('apify');
+const log = Actor.log;
 const Scraper = require('./scraper');
 const ArticleAnalyzer = require('./analyzers/articleAnalyzer');
 const EcommerceAnalyzer = require('./analyzers/ecommerceAnalyzer');
@@ -207,7 +208,7 @@ async function main() {
         log.error('Error details:', JSON.stringify(error, null, 2));
 
         // Make sure the error is thrown so Apify marks the run as failed
-        await Actor.fail(error.message);
+        await Actor.exit({ status: 'FAILED', message: error.message });
     }
 }
 

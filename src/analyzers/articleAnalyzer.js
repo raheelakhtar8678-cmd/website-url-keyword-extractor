@@ -6,7 +6,8 @@ const TextProcessor = require('../utils/textProcessor');
 const SEOMetrics = require('../utils/seoMetrics');
 const SimpleRAKE = require('../utils/simpleRAKE');
 const natural = require('natural');
-const { Actor, log } = require('apify');
+const { Actor } = require('apify');
+const log = Actor.log;
 
 class ArticleAnalyzer {
     constructor(options = {}) {

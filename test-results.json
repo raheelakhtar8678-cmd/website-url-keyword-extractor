@@ -1,0 +1,1642 @@
+{
+  "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+  "urlHostname": "en.wikipedia.org",
+  "contentType": "article",
+  "extractedAt": "2026-01-03T16:30:16.011Z",
+  "keywords": {
+    "topKeywords": [
+      {
+        "keyword": "luger & stubblefield",
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "mackworth & goebel",
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "new york times.",
+        "frequency": 24,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 46,
+        "difficulty": 20.574162679425836,
+        "seoScore": 74,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "geoffrey hinton",
+        "frequency": 20,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 76,
+        "difficulty": 40.558213716108455,
+        "seoScore": 73,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "li",
+        "frequency": 18,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 100,
+        "difficulty": 60.57416267942584,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "alan turing",
+        "frequency": 14,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 68,
+        "difficulty": 40.390749601275914,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "wall street journal.",
+        "frequency": 12,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 46,
+        "difficulty": 20.28708133971292,
+        "seoScore": 74,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "ai systems",
+        "frequency": 10,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 74,
+        "difficulty": 40.27910685805423,
+        "seoScore": 72,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "cambridge university press.",
+        "frequency": 8,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 42,
+        "difficulty": 20.19138755980861,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "three mile island",
+        "frequency": 6,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.14354066985646,
+        "seoScore": 83,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "chinese room",
+        "frequency": 6,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 96,
+        "difficulty": 40.16746411483253,
+        "seoScore": 79,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "software development",
+        "frequency": 6,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 96,
+        "difficulty": 40.16746411483253,
+        "seoScore": 79,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "european union",
+        "frequency": 6,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 73,
+        "difficulty": 40.16746411483253,
+        "seoScore": 72,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "yann lecun",
+        "frequency": 6,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 69,
+        "difficulty": 40.16746411483253,
+        "seoScore": 71,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "wikipedia",
+        "frequency": 6,
+        "methods": [
+          "tfidf",
+          "title",
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 7.260855349587511,
+        "prominence": 100,
+        "difficulty": 60.19138755980861,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "intelligence",
+        "frequency": 6,
+        "methods": [
+          "tfidf",
+          "title",
+          "heading"
+        ],
+        "tfidfScore": 3.973282993433076,
+        "prominence": 100,
+        "difficulty": 60.19138755980861,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "artificial",
+        "frequency": 5,
+        "methods": [
+          "tfidf",
+          "title",
+          "heading"
+        ],
+        "tfidfScore": 4.082801519239566,
+        "prominence": 100,
+        "difficulty": 60.15948963317384,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "international energy agency",
+        "frequency": 4,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 78,
+        "difficulty": 20.095693779904305,
+        "seoScore": 78,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "readview sourceview",
+        "frequency": 4,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 99,
+        "difficulty": 40.111642743221694,
+        "seoScore": 75,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "sam altman",
+        "frequency": 4,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 96,
+        "difficulty": 40.111642743221694,
+        "seoScore": 74,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      }
+    ],
+    "longTailKeywords": [
+      {
+        "keyword": "luger & stubblefield",
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "mackworth & goebel",
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "new york times.",
+        "frequency": 24,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 46,
+        "difficulty": 20.574162679425836,
+        "seoScore": 74,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "wall street journal.",
+        "frequency": 12,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 46,
+        "difficulty": 20.28708133971292,
+        "seoScore": 74,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "cambridge university press.",
+        "frequency": 8,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 42,
+        "difficulty": 20.19138755980861,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "three mile island",
+        "frequency": 6,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.14354066985646,
+        "seoScore": 83,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "international energy agency",
+        "frequency": 4,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 78,
+        "difficulty": 20.095693779904305,
+        "seoScore": 78,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "arthur e. bryson",
+        "frequency": 4,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 54,
+        "difficulty": 20.095693779904305,
+        "seoScore": 71,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "law library of congress",
+        "frequency": 4,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 34,
+        "difficulty": 20.095693779904305,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "chairman willie l. phillips,",
+        "frequency": 2,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.047846889952154,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "crane clean energy center",
+        "frequency": 2,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.047846889952154,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "federal energy regulatory commission",
+        "frequency": 2,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.047846889952154,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "european union's general data",
+        "frequency": 2,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 73,
+        "difficulty": 20.047846889952154,
+        "seoScore": 72,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "vincent van gogh",
+        "frequency": 2,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 83,
+        "difficulty": 20.047846889952154,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "iraq, syria, israel",
+        "frequency": 2,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 83,
+        "difficulty": 20.047846889952154,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      }
+    ],
+    "lsiKeywords": [
+      {
+        "keyword": "li",
+        "lsiScore": 494,
+        "frequency": 18,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 100,
+        "difficulty": 60.57416267942584,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "intelligence",
+        "lsiScore": 462,
+        "frequency": 6,
+        "methods": [
+          "tfidf",
+          "title",
+          "heading"
+        ],
+        "tfidfScore": 3.973282993433076,
+        "prominence": 100,
+        "difficulty": 60.19138755980861,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "artificial",
+        "lsiScore": 415,
+        "frequency": 5,
+        "methods": [
+          "tfidf",
+          "title",
+          "heading"
+        ],
+        "tfidfScore": 4.082801519239566,
+        "prominence": 100,
+        "difficulty": 60.15948963317384,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "wikipedia",
+        "lsiScore": 17,
+        "frequency": 6,
+        "methods": [
+          "tfidf",
+          "title",
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 7.260855349587511,
+        "prominence": 100,
+        "difficulty": 60.19138755980861,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "alan turing",
+        "lsiScore": 6,
+        "frequency": 14,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 68,
+        "difficulty": 40.390749601275914,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "geoffrey hinton",
+        "lsiScore": 5,
+        "frequency": 20,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 76,
+        "difficulty": 40.558213716108455,
+        "seoScore": 73,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "mackworth & goebel",
+        "lsiScore": 5,
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "luger & stubblefield",
+        "lsiScore": 4,
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "ai systems",
+        "lsiScore": 3,
+        "frequency": 10,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 74,
+        "difficulty": 40.27910685805423,
+        "seoScore": 72,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "european union",
+        "lsiScore": 3,
+        "frequency": 6,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 73,
+        "difficulty": 40.16746411483253,
+        "seoScore": 72,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "international energy agency",
+        "lsiScore": 2,
+        "frequency": 4,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 78,
+        "difficulty": 20.095693779904305,
+        "seoScore": 78,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "yann lecun",
+        "lsiScore": 2,
+        "frequency": 6,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 69,
+        "difficulty": 40.16746411483253,
+        "seoScore": 71,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "law library of congress",
+        "lsiScore": 2,
+        "frequency": 4,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 34,
+        "difficulty": 20.095693779904305,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      }
+    ],
+    "questionKeywords": [],
+    "commercialKeywords": [],
+    "competitionKeywords": {
+      "high": [],
+      "medium": [
+        {
+          "keyword": "geoffrey hinton",
+          "frequency": 20,
+          "methods": [
+            "entity-person",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 76,
+          "difficulty": 40.558213716108455,
+          "seoScore": 73,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "li",
+          "frequency": 18,
+          "methods": [
+            "entity-person",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 100,
+          "difficulty": 60.57416267942584,
+          "seoScore": 70,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "alan turing",
+          "frequency": 14,
+          "methods": [
+            "entity-person",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 68,
+          "difficulty": 40.390749601275914,
+          "seoScore": 70,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "ai systems",
+          "frequency": 10,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 74,
+          "difficulty": 40.27910685805423,
+          "seoScore": 72,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "chinese room",
+          "frequency": 6,
+          "methods": [
+            "entity-place",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 96,
+          "difficulty": 40.16746411483253,
+          "seoScore": 79,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "software development",
+          "frequency": 6,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 96,
+          "difficulty": 40.16746411483253,
+          "seoScore": 79,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "european union",
+          "frequency": 6,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 73,
+          "difficulty": 40.16746411483253,
+          "seoScore": 72,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "yann lecun",
+          "frequency": 6,
+          "methods": [
+            "entity-person",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 69,
+          "difficulty": 40.16746411483253,
+          "seoScore": 71,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "wikipedia",
+          "frequency": 6,
+          "methods": [
+            "tfidf",
+            "title",
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 7.260855349587511,
+          "prominence": 100,
+          "difficulty": 60.19138755980861,
+          "seoScore": 70,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        },
+        {
+          "keyword": "intelligence",
+          "frequency": 6,
+          "methods": [
+            "tfidf",
+            "title",
+            "heading"
+          ],
+          "tfidfScore": 3.973282993433076,
+          "prominence": 100,
+          "difficulty": 60.19138755980861,
+          "seoScore": 70,
+          "isLongTail": false,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "medium"
+        }
+      ],
+      "low": [
+        {
+          "keyword": "luger & stubblefield",
+          "frequency": 44,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 55,
+          "difficulty": 21.05263157894737,
+          "seoScore": 76,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "mackworth & goebel",
+          "frequency": 44,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 55,
+          "difficulty": 21.05263157894737,
+          "seoScore": 76,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "new york times.",
+          "frequency": 24,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 46,
+          "difficulty": 20.574162679425836,
+          "seoScore": 74,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "wall street journal.",
+          "frequency": 12,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 46,
+          "difficulty": 20.28708133971292,
+          "seoScore": 74,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "cambridge university press.",
+          "frequency": 8,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 42,
+          "difficulty": 20.19138755980861,
+          "seoScore": 73,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "three mile island",
+          "frequency": 6,
+          "methods": [
+            "entity-place",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 77,
+          "difficulty": 20.14354066985646,
+          "seoScore": 83,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "international energy agency",
+          "frequency": 4,
+          "methods": [
+            "entity-org",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 78,
+          "difficulty": 20.095693779904305,
+          "seoScore": 78,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "arthur e. bryson",
+          "frequency": 4,
+          "methods": [
+            "entity-person",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 54,
+          "difficulty": 20.095693779904305,
+          "seoScore": 71,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "law library of congress",
+          "frequency": 4,
+          "methods": [
+            "entity-place",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 34,
+          "difficulty": 20.095693779904305,
+          "seoScore": 70,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        },
+        {
+          "keyword": "chairman willie l. phillips,",
+          "frequency": 2,
+          "methods": [
+            "entity-person",
+            "entity-topic"
+          ],
+          "tfidfScore": 0,
+          "prominence": 77,
+          "difficulty": 20.047846889952154,
+          "seoScore": 73,
+          "isLongTail": true,
+          "isQuestion": false,
+          "hasCommercialIntent": false,
+          "competition": "low"
+        }
+      ]
+    },
+    "searchSuggestions": [],
+    "all": [
+      {
+        "keyword": "luger & stubblefield",
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "mackworth & goebel",
+        "frequency": 44,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 55,
+        "difficulty": 21.05263157894737,
+        "seoScore": 76,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "new york times.",
+        "frequency": 24,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 46,
+        "difficulty": 20.574162679425836,
+        "seoScore": 74,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "geoffrey hinton",
+        "frequency": 20,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 76,
+        "difficulty": 40.558213716108455,
+        "seoScore": 73,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "li",
+        "frequency": 18,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 100,
+        "difficulty": 60.57416267942584,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "alan turing",
+        "frequency": 14,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 68,
+        "difficulty": 40.390749601275914,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "wall street journal.",
+        "frequency": 12,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 46,
+        "difficulty": 20.28708133971292,
+        "seoScore": 74,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "ai systems",
+        "frequency": 10,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 74,
+        "difficulty": 40.27910685805423,
+        "seoScore": 72,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "cambridge university press.",
+        "frequency": 8,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 42,
+        "difficulty": 20.19138755980861,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "three mile island",
+        "frequency": 6,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.14354066985646,
+        "seoScore": 83,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "chinese room",
+        "frequency": 6,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 96,
+        "difficulty": 40.16746411483253,
+        "seoScore": 79,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "software development",
+        "frequency": 6,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 96,
+        "difficulty": 40.16746411483253,
+        "seoScore": 79,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "european union",
+        "frequency": 6,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 73,
+        "difficulty": 40.16746411483253,
+        "seoScore": 72,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "yann lecun",
+        "frequency": 6,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 69,
+        "difficulty": 40.16746411483253,
+        "seoScore": 71,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "wikipedia",
+        "frequency": 6,
+        "methods": [
+          "tfidf",
+          "title",
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 7.260855349587511,
+        "prominence": 100,
+        "difficulty": 60.19138755980861,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "intelligence",
+        "frequency": 6,
+        "methods": [
+          "tfidf",
+          "title",
+          "heading"
+        ],
+        "tfidfScore": 3.973282993433076,
+        "prominence": 100,
+        "difficulty": 60.19138755980861,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "artificial",
+        "frequency": 5,
+        "methods": [
+          "tfidf",
+          "title",
+          "heading"
+        ],
+        "tfidfScore": 4.082801519239566,
+        "prominence": 100,
+        "difficulty": 60.15948963317384,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "international energy agency",
+        "frequency": 4,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 78,
+        "difficulty": 20.095693779904305,
+        "seoScore": 78,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "readview sourceview",
+        "frequency": 4,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 99,
+        "difficulty": 40.111642743221694,
+        "seoScore": 75,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "sam altman",
+        "frequency": 4,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 96,
+        "difficulty": 40.111642743221694,
+        "seoScore": 74,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "arthur e. bryson",
+        "frequency": 4,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 54,
+        "difficulty": 20.095693779904305,
+        "seoScore": 71,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "jensen huang",
+        "frequency": 4,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 85,
+        "difficulty": 40.111642743221694,
+        "seoScore": 70,
+        "isLongTail": false,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "medium"
+      },
+      {
+        "keyword": "law library of congress",
+        "frequency": 4,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 34,
+        "difficulty": 20.095693779904305,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "chairman willie l. phillips,",
+        "frequency": 2,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.047846889952154,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "crane clean energy center",
+        "frequency": 2,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.047846889952154,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "federal energy regulatory commission",
+        "frequency": 2,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 77,
+        "difficulty": 20.047846889952154,
+        "seoScore": 73,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "european union's general data",
+        "frequency": 2,
+        "methods": [
+          "entity-org",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 73,
+        "difficulty": 20.047846889952154,
+        "seoScore": 72,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "vincent van gogh",
+        "frequency": 2,
+        "methods": [
+          "entity-person",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 83,
+        "difficulty": 20.047846889952154,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "iraq, syria, israel",
+        "frequency": 2,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 83,
+        "difficulty": 20.047846889952154,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      },
+      {
+        "keyword": "canada, china, india, japan, mauritius,",
+        "frequency": 2,
+        "methods": [
+          "entity-place",
+          "entity-topic"
+        ],
+        "tfidfScore": 0,
+        "prominence": 67,
+        "difficulty": 20.047846889952154,
+        "seoScore": 70,
+        "isLongTail": true,
+        "isQuestion": false,
+        "hasCommercialIntent": false,
+        "competition": "low"
+      }
+    ]
+  },
+  "seoMetrics": {
+    "totalKeywords": 30,
+    "uniqueKeywords": 30,
+    "avgKeywordLength": 2.6333333333333333,
+    "competitionBreakdown": {
+      "high": 0,
+      "medium": 10,
+      "low": 10
+    }
+  },
+  "pageMetadata": {
+    "title": "Artificial intelligence - Wikipedia",
+    "metaDescription": "",
+    "headingsCount": {
+      "h1": 1,
+      "h2": 14,
+      "h3": 39
+    }
+  },
+  "reportUrl": "https://api.apify.com/v2/key-value-stores/test-store-id/records/report.html"
+}

@@ -5,7 +5,8 @@
 
 const TextProcessor = require('../utils/textProcessor');
 const SEOMetrics = require('../utils/seoMetrics');
-const { Actor, log } = require('apify');
+const { Actor } = require('apify');
+const log = Actor.log;
 
 class EcommerceAnalyzer {
     constructor(options = {}) {

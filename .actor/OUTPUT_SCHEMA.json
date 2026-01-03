@@ -1,0 +1,228 @@
+{
+    "title": "Keyword Analysis Result",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "url": {
+            "type": "string",
+            "title": "URL",
+            "description": "The URL of the page analyzed.",
+            "format": "uri"
+        },
+        "urlHostname": {
+            "type": "string",
+            "title": "Hostname",
+            "description": "The hostname extracted from the URL."
+        },
+        "contentType": {
+            "type": "string",
+            "title": "Content Type",
+            "description": "The detected type of content (article, ecommerce, or general).",
+            "enum": [
+                "article",
+                "ecommerce",
+                "general"
+            ]
+        },
+        "extractedAt": {
+            "type": "string",
+            "title": "Extraction Time",
+            "description": "The ISO timestamp when the extraction was performed.",
+            "format": "date-time"
+        },
+        "keywords": {
+            "type": "object",
+            "title": "Extracted Keywords",
+            "properties": {
+                "topKeywords": {
+                    "type": "array",
+                    "title": "Top Keywords",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                },
+                "longTailKeywords": {
+                    "type": "array",
+                    "title": "Long-tail Keywords",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                },
+                "lsiKeywords": {
+                    "type": "array",
+                    "title": "LSI Keywords",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                },
+                "questionKeywords": {
+                    "type": "array",
+                    "title": "Question Keywords",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                },
+                "commercialKeywords": {
+                    "type": "array",
+                    "title": "Commercial Keywords",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                },
+                "competitionKeywords": {
+                    "type": "object",
+                    "title": "Competition Breakdown",
+                    "properties": {
+                        "high": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/keywordItem"
+                            }
+                        },
+                        "medium": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/keywordItem"
+                            }
+                        },
+                        "low": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/keywordItem"
+                            }
+                        }
+                    }
+                },
+                "searchSuggestions": {
+                    "type": "array",
+                    "title": "Search Suggestions",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                },
+                "all": {
+                    "type": "array",
+                    "title": "All Keywords",
+                    "items": {
+                        "$ref": "#/definitions/keywordItem"
+                    }
+                }
+            }
+        },
+        "seoMetrics": {
+            "type": "object",
+            "title": "SEO Metrics",
+            "properties": {
+                "totalKeywords": {
+                    "type": "integer"
+                },
+                "uniqueKeywords": {
+                    "type": "integer"
+                },
+                "avgKeywordLength": {
+                    "type": "number"
+                },
+                "competitionBreakdown": {
+                    "type": "object",
+                    "properties": {
+                        "high": {
+                            "type": "integer"
+                        },
+                        "medium": {
+                            "type": "integer"
+                        },
+                        "low": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "pageMetadata": {
+            "type": "object",
+            "title": "Page Metadata",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "metaDescription": {
+                    "type": "string"
+                },
+                "headingsCount": {
+                    "type": "object",
+                    "properties": {
+                        "h1": {
+                            "type": "integer"
+                        },
+                        "h2": {
+                            "type": "integer"
+                        },
+                        "h3": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "reportUrl": {
+            "type": "string",
+            "title": "Report URL",
+            "description": "Link to the generated HTML SEO report.",
+            "format": "uri"
+        }
+    },
+    "definitions": {
+        "keywordItem": {
+            "type": "object",
+            "properties": {
+                "keyword": {
+                    "type": "string"
+                },
+                "frequency": {
+                    "type": "integer"
+                },
+                "methods": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "prominence": {
+                    "type": "number"
+                },
+                "difficulty": {
+                    "type": "number"
+                },
+                "seoScore": {
+                    "type": "number"
+                },
+                "isLongTail": {
+                    "type": "boolean"
+                },
+                "isQuestion": {
+                    "type": "boolean"
+                },
+                "competition": {
+                    "type": "string",
+                    "enum": [
+                        "high",
+                        "medium",
+                        "low"
+                    ]
+                },
+                "tfidfScore": {
+                    "type": "number"
+                },
+                "lsiScore": {
+                    "type": "number"
+                },
+                "hasCommercialIntent": {
+                    "type": "boolean"
+                },
+                "isSearchTerm": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

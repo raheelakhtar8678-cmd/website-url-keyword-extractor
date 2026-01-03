@@ -8,6 +8,7 @@
         "templateId": "node-playwright"
     },
     "input": "./INPUT_SCHEMA.json",
+    "output": "./OUTPUT_SCHEMA.json",
     "dockerfile": "./Dockerfile",
     "readme": "./README.md",
     "categories": [

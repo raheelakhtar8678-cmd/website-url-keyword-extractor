@@ -3,7 +3,8 @@
  */
 
 const { chromium } = require('playwright');
-const { Actor, log } = require('apify');
+const { Actor } = require('apify');
+const log = Actor.log;
 
 class Scraper {
     constructor(options = {}) {
